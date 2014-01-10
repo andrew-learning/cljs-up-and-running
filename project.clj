@@ -5,4 +5,11 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [org.clojure/clojurescript "0.0-2138"]]
-  :plugins [[lein-cljsbuild "1.0.1"]] )
+  :plugins [[lein-cljsbuild "1.0.1"]]
+  :cljsbuild
+  {:builds
+    [{:source-paths ["src/cljs"],
+         :compiler
+         {:pretty-print true,
+              :output-to "resources/public/generated/cljs_up_and_running.js",
+              :optimizations :whitespace}}]} )
